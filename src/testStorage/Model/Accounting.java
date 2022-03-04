@@ -1,5 +1,9 @@
 package testStorage.Model;
 
-public interface Accounting {
-
+public class Accounting extends Staff
+{
+	public void generateBill(Employee employee)
+	{
+		
+	}
 }

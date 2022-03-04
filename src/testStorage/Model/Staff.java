@@ -1,5 +1,14 @@
 package testStorage.Model;
 
-public class Staff {
+public class Staff extends Person  
+{
+private int staffID; 
+private String staffUserName;
+private String department;
+
+	public Staff( )
+	{
+		
+	}
 
 }
