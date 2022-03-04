@@ -2,8 +2,6 @@ package testStorage.Model;
 
 public abstract class Person 
 {
-
-
 private String personfName;
 private String personlName;
 
@@ -35,6 +33,5 @@ public String getPersonPhoneNumber() {
 public void setPersonPhoneNumber(String personPhoneNumber) {
 	this.personPhoneNumber = personPhoneNumber;
 }
-
 
 }
