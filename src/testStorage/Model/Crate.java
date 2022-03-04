@@ -1,14 +1,35 @@
 package testStorage.Model;
 
-import java.sql.*;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Crate 
 {
 private int crateID;
+private int shelfNumber;
+
 private Date createdOnDate;
+
 private CrateStatus crateStatusEnum;
+private CrateSize crateSizeEnum;
+private CrateContentType crateContentTypeEnum;
+
 private boolean isFull;
+private ArrayList<Content> contentList;
+
+	
+
+	public Crate(int crateID, int shelfNumber, Date createdOnDate, CrateStatus crateStatusEnum, CrateSize crateSizeEnum, CrateContentType crateContentTypeEnum, boolean isFull, ArrayList<Content> contentList) 
+	{
+		this.crateID = crateID;
+		this.shelfNumber = shelfNumber;
+		this.createdOnDate = createdOnDate;
+		this.crateStatusEnum = crateStatusEnum;
+		this.crateSizeEnum = crateSizeEnum;
+		this.crateContentTypeEnum = crateContentTypeEnum;
+		this.isFull = isFull;
+		this.contentList = contentList;
+	}
 
 	public void removeContentByID(int contentID) 
 	{
@@ -24,6 +45,14 @@ private boolean isFull;
 		this.crateID = crateID;
 	}
 
+	public int getShelfNumber() {
+		return shelfNumber;
+	}
+
+	public void setShelfNumber(int shelfNumber) {
+		this.shelfNumber = shelfNumber;
+	}
+	
 	public Date getCreatedOnDate() {
 		return createdOnDate;
 	}
@@ -48,19 +77,27 @@ private boolean isFull;
 		this.isFull = isFull;
 	}
 
-	  public static void main(String [] args) {
-			 Connection con = DatabaseConnection.getInstance().sqlConnection();
-			 String sql = "select * from person";
-			 try {
-				PreparedStatement  prepareStatement = con.prepareStatement(sql);
-				ResultSet result = prepareStatement.executeQuery();  
-				while(result.next()){  
-				System.out.println("Name "+result.getString(2) +" "+ result.getString(3));  
-				}  
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			 
-		  }
+	public CrateSize getCrateSizeEnum() {
+		return crateSizeEnum;
+	}
+
+	public void setCrateSizeEnum(CrateSize crateSizeEnum) {
+		this.crateSizeEnum = crateSizeEnum;
+	}
+
+	public CrateContentType getCrateContentTypeEnum() {
+		return crateContentTypeEnum;
+	}
+
+	public void setCrateContentTypeEnum(CrateContentType crateContentTypeEnum) {
+		this.crateContentTypeEnum = crateContentTypeEnum;
+	}
+
+	public ArrayList<Content> getContentList() {
+		return contentList;
+	}
+
+	public void setContentList(ArrayList<Content> contentList) {
+		this.contentList = contentList;
+	}
 }

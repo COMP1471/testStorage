@@ -2,25 +2,47 @@ package testStorage.Model;
 
 import java.util.ArrayList;
 
-public class Employee extends Person implements Manager
+public class Employee extends Person 
 {
-	private int employeeID;
-	private String employerUserName;
+private int employeeID;
+private String employeeUserName;
+private Branch branch;
 	 
-	
+	public Employee(String personfName, String personlName, String personEmail, String personPhoneNumber, int employeeID, String employeeUserName) 
+	{
+		super(personfName, personlName, personEmail, personPhoneNumber);
+		
+		this.setEmployeeID(employeeID);
+		this.setEmployeeUserName(employeeUserName);
+	}
 
-	public Employee() 
+	public int getEmployeeID() {
+		return employeeID;
+	}
+
+	public void setEmployeeID(int employeeID) {
+		this.employeeID = employeeID;
+	}
+
+	public String getEmployeeUserName() {
+		return employeeUserName;
+	}
+
+	public void setEmployeeUserName(String employeeUserName) {
+		this.employeeUserName = employeeUserName;
+	}
+
+	public Branch getBranch() {
+		return branch;
+	}
+
+	public void setBranch(Branch branch) {
+		this.branch = branch;
+	}
+	
+	public void sendCrates(ArrayList<Crate> crateSendList)
 	{
 		
 	}
-
-
-
-	@Override
-	public void requestsCrate(ArrayList<Crate> crateList) {
-		// TODO Auto-generated method stub
-		
-	}
 	
-
 }

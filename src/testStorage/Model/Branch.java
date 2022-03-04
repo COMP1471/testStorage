@@ -1,6 +1,5 @@
 package testStorage.Model;
 
-public class Bill 
-{
+public class Branch {
 
 }

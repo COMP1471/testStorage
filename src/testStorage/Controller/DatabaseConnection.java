@@ -1,4 +1,4 @@
-package testStorage.Model;
+package testStorage.Controller;
 
 import java.sql.*;
 
@@ -6,7 +6,7 @@ public class DatabaseConnection {
       private String userName = "root";
       private String passWord = "";
       private String hostName = "localhost";
-      private String databaseName = "test";
+      private String databaseName = "test2";
       private String portNumber = "3306";
       private Connection sqlConnection;
       private final int maxRetry = 3;

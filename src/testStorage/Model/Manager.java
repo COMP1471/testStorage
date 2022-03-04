@@ -2,8 +2,19 @@ package testStorage.Model;
 
 import java.util.ArrayList;
 
-public interface Manager {
+public class Manager extends Employee
+{
 
-	void requestsCrate(ArrayList<Crate> crateList);
+	public Manager(String personfName, String personlName, String personEmail, String personPhoneNumber, int employeeID, String employeeUserName) 
+	{
+		super(personfName, personlName, personEmail, personPhoneNumber, employeeID, employeeUserName);
+		// TODO Auto-generated constructor stub
+		
+	}
+	
+	public void requestCrates(ArrayList<Crate> crateRequestList)
+	{
+		
+	}
 
 }
