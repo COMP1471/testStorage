@@ -1,5 +1,9 @@
 package testStorage.Model;
 
-public interface Sales {
-
+public class Sales extends Staff
+{
+	public void addClient(Employee employee)
+	{
+		
+	}
 }

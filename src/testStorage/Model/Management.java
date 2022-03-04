@@ -1,5 +1,9 @@
 package testStorage.Model;
 
-public interface Management {
-
+public class Management extends Staff
+{
+	public void viewUsage(Employee employee)
+	{
+		
+	}
 }
