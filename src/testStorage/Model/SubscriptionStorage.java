@@ -13,11 +13,13 @@ private int frequency;
 		this.frequency = frequency;
 	}
 
-	public int getFrequency() {
+	public int getFrequency() 
+	{
 		return frequency;
 	}
 
-	public void setFrequency(int frequency) {
+	public void setFrequency(int frequency) 
+	{
 		this.frequency = frequency;
 	}
 

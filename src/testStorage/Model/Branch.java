@@ -2,7 +2,7 @@ package testStorage.Model;
 
 import java.util.ArrayList;
 
-public class Branch 
+public class Branch extends Observer
 {
 private int branchID;
 private int clientID;
@@ -59,7 +59,11 @@ private String branchAddress;
 	public void setClientID(int clientID) {
 		this.clientID = clientID;
 	}
-	
-	
+
+	@Override
+	public void update() {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

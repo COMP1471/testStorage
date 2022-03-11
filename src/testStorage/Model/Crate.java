@@ -19,7 +19,7 @@ public void setWareHouseID(int wareHouseID) {
 }
 
 private Date createdOnDate;
-
+private ArrayList<Observer> observers = new ArrayList<Observer>();
 private CrateStatus crateStatusEnum;
 private CrateSize crateSizeEnum;
 private CrateContentType crateContentTypeEnum;
@@ -121,6 +121,16 @@ private ArrayList<Content> contentList;
 
 	public void setClientID(int clientID) {
 		this.clientID = clientID;
+	}
+	
+	public void attach(Observer observer) {
+		observers.add(observer);
+	}  
+	
+	public void notifyAllObservers() {
+		for (Observer observer : observers) {
+			observer.update();
+		}
 	}
 	
 	public String toString()
