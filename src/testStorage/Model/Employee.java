@@ -8,12 +8,14 @@ private int employeeID;
 private String employeeUserName;
 private Branch branch;
 	 
-	public Employee(String personfName, String personlName, String personEmail, String personPhoneNumber, int employeeID, String employeeUserName) 
+	public Employee(String personfName, String personlName, String personEmail, String personPhoneNumber, int employeeID, String employeeUserName, Branch branch) 
 	{
 		super(personfName, personlName, personEmail, personPhoneNumber);
 		
-		this.setEmployeeID(employeeID);
-		this.setEmployeeUserName(employeeUserName);
+		this.employeeID = employeeID;
+		this.employeeUserName = employeeUserName;
+		this.branch = branch;
+		
 	}
 
 	public int getEmployeeID() {

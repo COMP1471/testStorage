@@ -7,6 +7,16 @@ public class Crate
 {
 private int crateID;
 private int shelfNumber;
+private int clientID;  // id of a client to whom the crate belongs to 
+private int wareHouseID;
+
+public int getWareHouseID() {
+	return wareHouseID;
+}
+
+public void setWareHouseID(int wareHouseID) {
+	this.wareHouseID = wareHouseID;
+}
 
 private Date createdOnDate;
 
@@ -19,16 +29,20 @@ private ArrayList<Content> contentList;
 
 	
 
-	public Crate(int crateID, int shelfNumber, Date createdOnDate, CrateStatus crateStatusEnum, CrateSize crateSizeEnum, CrateContentType crateContentTypeEnum, boolean isFull, ArrayList<Content> contentList) 
+	public Crate(int crateID, int shelfNumber, int clientID, int wareHouseID,  Date createdOnDate, CrateStatus crateStatusEnum, CrateSize crateSizeEnum, CrateContentType crateContentTypeEnum, boolean isFull) 
 	{
 		this.crateID = crateID;
 		this.shelfNumber = shelfNumber;
+		this.clientID = clientID;
+		this.wareHouseID = wareHouseID;
+		
 		this.createdOnDate = createdOnDate;
+		
 		this.crateStatusEnum = crateStatusEnum;
 		this.crateSizeEnum = crateSizeEnum;
 		this.crateContentTypeEnum = crateContentTypeEnum;
 		this.isFull = isFull;
-		this.contentList = contentList;
+		contentList = new  ArrayList<Content>();
 	}
 
 	public void removeContentByID(int contentID) 
@@ -99,5 +113,25 @@ private ArrayList<Content> contentList;
 
 	public void setContentList(ArrayList<Content> contentList) {
 		this.contentList = contentList;
+	}
+
+	public int getClientID() {
+		return clientID;
+	}
+
+	public void setClientID(int clientID) {
+		this.clientID = clientID;
+	}
+	
+	public String toString()
+	{
+		return "Crate ID: " + crateID + " on the shelf number " + shelfNumber + " and belongs to " + clientID + " created on " + createdOnDate;  // id of a client to whom the crate belongs to 
+
+		//private CrateStatus crateStatusEnum;
+		//private CrateSize crateSizeEnum;
+		//private CrateContentType crateContentTypeEnum;
+
+		//private boolean isFull;
+		//private ArrayList<Content> contentList;
 	}
 }

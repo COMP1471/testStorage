@@ -8,9 +8,11 @@ private int officeID;
 private String officeAddress;
 private ArrayList<Staff> staffList;
 
-	public Office()
+	public Office(int officeID, String officeAddress)
 	{
-		
+		this.officeID = officeID;
+		this.officeAddress = officeAddress;
+		staffList = new ArrayList<Staff>();
 	}
 	
 	public int getOfficeID() 
