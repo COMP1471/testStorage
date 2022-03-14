@@ -1,45 +1,55 @@
 package testStorage.Model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
 public class Storage 
 {
-private Date startDate;
-private Date endDate;
+private LocalDate startDate;
+private LocalDate endDate;
 private ArrayList<Crate> storedCrateList;
 int lengthOfStorage;
 
-	public Storage(Date startDate, Date endDate, ArrayList<Crate> storedCrateList, int lengthOfStorage) 
+	public Storage(LocalDate startDate, ArrayList<Crate> storedCrateList, int lengthOfStorage) 
 	{
 		this.setStartDate(startDate);
-		this.setEndDate(endDate);
+		endDate = startDate.plusDays(lengthOfStorage);
+		
 		this.setStoredCrateList(storedCrateList);
 		this.lengthOfStorage = lengthOfStorage;
 	}
 
-	public Date getStartDate() {
-		return startDate;
-	}
-
-	public void setStartDate(Date startDate) {
-		this.startDate = startDate;
-	}
-
-	public Date getEndDate() {
-		return endDate;
-	}
-
-	public void setEndDate(Date endDate) {
-		this.endDate = endDate;
-	}
-
-	public ArrayList<Crate> getStoredCrateList() {
+	public ArrayList<Crate> getStoredCrateList() 
+	{
 		return storedCrateList;
 	}
 
-	public void setStoredCrateList(ArrayList<Crate> storedCrateList) {
+	public void setStoredCrateList(ArrayList<Crate> storedCrateList) 
+	{
 		this.storedCrateList = storedCrateList;
+	}
+
+	public LocalDate getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(LocalDate endDate) {
+		this.endDate = endDate;
+	}
+	
+	public LocalDate getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(LocalDate startDate) {
+		this.startDate = startDate;
+	}
+
+	public boolean compareTo(Storage existingStorage)
+	{
+		// if start/end dates, crates and contents as well as length are same
+		return false;
 	}
 
 

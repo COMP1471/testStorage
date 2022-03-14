@@ -10,7 +10,7 @@ private boolean [][] shelfs = new boolean[6][6];
 	public WareHouse(int officeID, String officeAddress)
 	{
 		super(officeID, officeAddress);
-		crateList = new ArrayList<Crate>();
+		crateList = new ArrayList<Crate>();  // this is 0 so self locations are 0
 		setSelfLoactions(crateList);
 	}
 
@@ -25,25 +25,39 @@ private boolean [][] shelfs = new boolean[6][6];
 		setSelfLoactions(crateList);
 	}
 
-	private void setSelfLoactions(ArrayList<Crate> crateList) {
-		for(int i = 0 ; i < crateList.size(); i++) {
+	private void setSelfLoactions(ArrayList<Crate> crateList) 
+	{
+		for(int i = 0 ; i < crateList.size(); i++) 
+		{
 			Crate crate = this.crateList.get(i);
 			int shelfNumber = crate.getShelfNumber();
 			int x = shelfNumber / 10 ;
 			int y = shelfNumber % 10 ;
-			if ((x <  6 && x >= 0) && (y < 6 && y >= 0)) {
-			this.shelfs[x][y] = true;
-		   }	
+			
+			if ((x <  6 && x >= 0) && (y < 6 && y >= 0)) 
+			{
+				this.shelfs[x][y] = true;
+		    }	
 		}
 	}
 	
-	public void addrates(ArrayList<Crate> newCrateList)
+	public void addCrates(ArrayList<Crate> newCrateList)
 	{
 		for(int i = 0; i < newCrateList.size(); i++)
 		{
 			Crate crateToAdd = newCrateList.get(i);
 			crateToAdd.setCrateStatusEnum(CrateStatus.inStorage);
 			crateList.add(crateToAdd);
+		}
+	}
+	
+	public void removeCrates(ArrayList<Crate> toRemoveCrateList)
+	{
+		for(int i = 0; i < toRemoveCrateList.size(); i++)
+		{
+			Crate crateToRemove = toRemoveCrateList.get(i);
+			crateToRemove.setCrateStatusEnum(CrateStatus.beingDelivered);
+			crateList.remove(crateToRemove);
 		}
 	}
 		
@@ -61,6 +75,10 @@ private boolean [][] shelfs = new boolean[6][6];
 		}
 		return -1;
 	}
-
-
+	
+	public int getNumberOfEmptyShelfs()
+	{
+		//go over the shelfs and give number of the available space
+		return 12;
+	}
 }

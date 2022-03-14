@@ -144,4 +144,10 @@ private ArrayList<Content> contentList;
 		//private boolean isFull;
 		//private ArrayList<Content> contentList;
 	}
+
+	public boolean compareTo(Crate existingCrate) 
+	{
+		// if contents overlap return TRUE
+		return false;
+	}
 }

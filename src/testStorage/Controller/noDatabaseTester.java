@@ -1,5 +1,6 @@
 package testStorage.Controller;
 
+import java.time.LocalDate;
 import java.util.*;
 
 import testStorage.Model.Branch;
@@ -14,6 +15,9 @@ import testStorage.Model.Manager;
 import testStorage.Model.Office;
 import testStorage.Model.Sales;
 import testStorage.Model.Staff;
+import testStorage.Model.Storage;
+import testStorage.Model.StorageAllocator;
+import testStorage.Model.SubscriptionStorage;
 import testStorage.Model.WareHouse;
 
 public class noDatabaseTester
@@ -45,8 +49,10 @@ public class noDatabaseTester
 		((Sales)sales1).addClient(firstClient);
 		
 		ArrayList<Content> contentList = new ArrayList<Content>();
-		Crate dummyCrate = new Crate(0, 0, 0, new Date(), CrateStatus.withClient, CrateSize.mediumSize, CrateContentType.electronicMediaContent, false, contentList);
-				
+		
+		Crate dummyCrate = new Crate(0, 0, 0, 0, new Date(), CrateStatus.withClient, CrateSize.mediumSize, CrateContentType.electronicMediaContent, false);
+		System.out.println(dummyCrate.toString());
+		
 		for (int i = 0; i < 20; i++)
 		{
 			Content content = new Content(i, "TV", dummyCrate);
@@ -58,7 +64,24 @@ public class noDatabaseTester
 		
 		System.out.println(dummyCrate.toString());
 		
-		Office warehouse = new WareHouse(0, "gaylord prospect");
+		Office wareHouse = new WareHouse(0, "gaylord prospect");
+		
+		
+		ArrayList<Crate> cratesForStorage = new ArrayList<Crate>();
+		
+		LocalDate startDate = LocalDate.of(2022, 03, 14);
+		Storage firstStorage = new Storage(startDate, cratesForStorage, 30);
+		
+		startDate = LocalDate.of(2022, 03, 21);
+		Storage secondStorage = new SubscriptionStorage(startDate, cratesForStorage, 60, 7);
+		
+		StorageAllocator storageAllocator = new StorageAllocator();  //final static so only used 1 instance across all project
+		storageAllocator.addNewWareHouse((WareHouse)wareHouse);
+		
+		storageAllocator.sendToStorage(firstStorage, employee1);
+		storageAllocator.sendToStorage(secondStorage, employee1);
+		
+		storageAllocator.getFromStorage(firstStorage, employee2);
 		
 	}
 

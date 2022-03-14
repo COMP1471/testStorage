@@ -1,5 +1,6 @@
 package testStorage.Model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -7,9 +8,9 @@ public class SubscriptionStorage extends Storage
 {
 private int frequency;
 
-	public SubscriptionStorage(Date startDate, Date endDate, ArrayList<Crate> storedCrateList, int lengthOfStorage, int frequency) 
+	public SubscriptionStorage(LocalDate startDate, ArrayList<Crate> storedCrateList, int lengthOfStorage, int frequency) 
 	{
-		super(startDate, endDate, storedCrateList, lengthOfStorage);
+		super(startDate, storedCrateList, lengthOfStorage);
 		this.frequency = frequency;
 	}
 
