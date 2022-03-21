@@ -82,6 +82,10 @@ public class noDatabaseTester
 		storageAllocator.sendToStorage(secondStorage, employee1);
 		
 		storageAllocator.getFromStorage(firstStorage, employee2);
+              
+		
+		
+		
 		
 	}
 

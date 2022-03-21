@@ -6,15 +6,15 @@ public class Employee extends Person
 {
 private int employeeID;
 private String employeeUserName;
-private Branch branch;
+private int branchID;
 	 
-	public Employee(String personfName, String personlName, String personEmail, String personPhoneNumber, int employeeID, String employeeUserName, Branch branch) 
+	public Employee(String personfName, String personlName, String personEmail, String personPhoneNumber, int employeeID, String employeeUserName, int branchID) 
 	{
 		super(personfName, personlName, personEmail, personPhoneNumber);
 		
 		this.employeeID = employeeID;
 		this.employeeUserName = employeeUserName;
-		this.branch = branch;
+		this.branchID = branchID;
 		
 	}
 
@@ -34,17 +34,52 @@ private Branch branch;
 		this.employeeUserName = employeeUserName;
 	}
 
-	public Branch getBranch() {
-		return branch;
+	public int getBranch() {
+		return branchID;
 	}
 
-	public void setBranch(Branch branch) {
-		this.branch = branch;
+	public void setBranch(int branchID) {
+		this.branchID = branchID;
 	}
 	
 	public void sendCrates(ArrayList<Crate> crateSendList)
 	{
 		
 	}
-	
+	public ArrayList<Crate> acceptDelivery(Delivery delivery)
+	{
+		ArrayList<Crate> requestedCrateList = delivery.getRequestCrateList();
+		// check if these are mine and return the validated list
+		
+		ArrayList<Crate> validateCrateList = new ArrayList<Crate>();
+		
+		if (requestedCrateList.size() < 1)
+		{
+			
+			delivery.setCompleted(false);
+			return null;
+		}
+		else
+		{
+			for (int i = 0; i < requestedCrateList.size(); i ++)
+			{
+				Crate requestedCrate = requestedCrateList.get(i);
+				
+				//if (requestedCrate.getClientID() == branch.getClientID())
+				//{
+				//validateCrateList.add(requestedCrate);
+				//}
+			}
+			if (validateCrateList.size() > 0)
+			{
+				delivery.setCompleted(true);
+				return validateCrateList;
+			}
+			else
+			{
+				delivery.setCompleted(false);
+				return null;
+			}
+		}
+	}
 }

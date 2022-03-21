@@ -16,22 +16,33 @@ private ArrayList<Branch> clientBranchList;
 		this.clientBranchList = clientBranchList;
 	}
 	
-	public int getClientID() {
+	public int getClientID() 
+	{
 		return clientID;
 	}
-	public void setClientID(int clientID) {
+	
+	public void setClientID(int clientID) 
+	{
 		this.clientID = clientID;
 	}
-	public String getClientName() {
+	
+	public String getClientName() 
+	{
 		return clientName;
 	}
-	public void setClientName(String clientName) {
+	
+	public void setClientName(String clientName)
+	{
 		this.clientName = clientName;
 	}
-	public ArrayList<Branch> getClientBranchList() {
+	
+	public ArrayList<Branch> getClientBranchList() 
+	{
 		return clientBranchList;
 	}
-	public void setClientBranchList(ArrayList<Branch> clientBranchList) {
+	
+	public void setClientBranchList(ArrayList<Branch> clientBranchList) 
+	{
 		this.clientBranchList = clientBranchList;
 	}
 }

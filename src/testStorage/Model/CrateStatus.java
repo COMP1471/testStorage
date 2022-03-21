@@ -4,5 +4,6 @@ public enum CrateStatus
 {
 	inStorage,
 	beingDelivered,
-	withClient
+	withClient,
+	waitingToBeDelivered
 }

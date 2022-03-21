@@ -25,7 +25,8 @@ private String staffUserName;
 		return staffUserName;
 	}
 
-	public void setStaffUserName(String staffUserName) {
+	public void setStaffUserName(String staffUserName) 
+	{
 		this.staffUserName = staffUserName;
 	}
 

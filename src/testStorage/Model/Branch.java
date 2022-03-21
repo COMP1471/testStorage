@@ -9,17 +9,20 @@ private int clientID;
 
 private ArrayList<Employee> branchEmployeeList;
 private String branchAddress;
-	
-	public Branch(int branchID, int clientID, String branchAddress) 
+private String branchPostcode;
+
+	public Branch(int branchID, int clientID, String branchAddress, String branchPostcode) 
 	{
 		this.branchID = branchID;
 		this.setClientID(clientID);
 		
 		branchEmployeeList = new ArrayList<Employee>();
+		
 		this.branchAddress = branchAddress;
+		this.branchPostcode = branchPostcode;
 	}
 
-	public Branch(int branchID, int clientID, ArrayList<Employee> branchEmployeeList, String branchAddress) 
+	public Branch(int branchID, int clientID, ArrayList<Employee> branchEmployeeList, String branchAddress, String branchPostcode)  
 	{
 		this.branchID = branchID;
 		this.setClientID(clientID);
@@ -64,6 +67,14 @@ private String branchAddress;
 	public void update() {
 		// TODO Auto-generated method stub
 		
+	}
+
+	public String getBranchPostcode() {
+		return branchPostcode;
+	}
+
+	public void setBranchPostcode(String branchPostcode) {
+		this.branchPostcode = branchPostcode;
 	}
 
 }

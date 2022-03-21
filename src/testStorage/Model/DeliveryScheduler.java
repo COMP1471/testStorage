@@ -1,23 +1,35 @@
 package testStorage.Model;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class DeliveryScheduler 
 {
-	public void requestDelivery(Employee requestEmployee, Crate requestCrate, Date deliveryDate, String deliveryAddress) 
+	public Delivery requestDelivery(Employee requestEmployee, ArrayList<Crate> requestCrateList, Date deliveryDate, String deliveryAddress) 
 	{
+		ArrayList<Crate> availableCrates = new ArrayList<Crate>();
+		
 		if (requestEmployee instanceof Manager)
 		{
-			if (requestCrate.getCrateStatusEnum() == CrateStatus.inStorage)
+			for (int i = 0; i < requestCrateList.size(); i++)
 			{
-				Delivery delivery = new Delivery(requestCrate, deliveryDate, deliveryAddress);
+				Crate requestCrate = requestCrateList.get(i);
+				
+				if (requestCrate.getCrateStatusEnum() == CrateStatus.inStorage)
+				{
+					availableCrates.add(requestCrate);
+				}
+				else
+				{
+					System.out.println("Crate " + requestCrate.toString() + " is already on client site or scheduled for the delivery");
+					System.out.println("Only the crates in warehouse will be added to delivery");
+				}
+				requestCrate.notifyAllObservers();
 			}
 		}
-		else
-		{
-			
-		}
-		requestCrate.notifyAllObservers();
+		
+		Delivery delivery = new Delivery(availableCrates, deliveryDate, deliveryAddress);
+		return delivery;
 	}
 	
 		// 1. Check if have permission

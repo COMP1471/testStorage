@@ -7,11 +7,19 @@ public class WareHouse extends Office
 private ArrayList<Crate> crateList;
 private boolean [][] shelfs = new boolean[6][6];
 
-	public WareHouse(int officeID, String officeAddress)
+	public WareHouse(int officeID, String officeAddress, String officePostCode)
 	{
-		super(officeID, officeAddress);
+		// constructor for a brand new warehouse
+		super(officeID, officeAddress, officePostCode);
 		crateList = new ArrayList<Crate>();  // this is 0 so self locations are 0
 		setSelfLoactions(crateList);
+	}
+	
+	public WareHouse(int officeID, String officeAddress, String officePostCode, ArrayList<Staff> staffList, ArrayList<Crate> crateList)
+	{
+		// constructor for an existing warehouse
+		super(officeID, officeAddress, officePostCode, staffList);
+		this.crateList = crateList;
 	}
 
 	public ArrayList<Crate> getCrateList() 

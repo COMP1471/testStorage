@@ -2,10 +2,9 @@ package testStorage.Model;
 
 public class Management extends Staff
 {
-	public Management(String personfName, String personlName, String personEmail, int staffID, String personPhoneNumber) 
+	public Management(String personfName, String personlName, String personEmail, String personPhoneNumber, int staffID, String staffUserName) 
 	{
-		super(personfName, personlName, personEmail, personPhoneNumber, staffID, personPhoneNumber);
-		// TODO Auto-generated constructor stub
+		super(personfName, personlName, personEmail, personPhoneNumber, staffID, staffUserName);
 	}
 
 	public void viewUsage(Employee employee)
