@@ -1,5 +1,6 @@
 package testStorage.Model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -10,15 +11,7 @@ private int shelfNumber;
 private int clientID;  // id of a client to whom the crate belongs to 
 private int wareHouseID;
 
-public int getWareHouseID() {
-	return wareHouseID;
-}
-
-public void setWareHouseID(int wareHouseID) {
-	this.wareHouseID = wareHouseID;
-}
-
-private Date createdOnDate;
+private LocalDate createdOnDate;
 private ArrayList<Observer> observers = new ArrayList<Observer>();
 private CrateStatus crateStatusEnum;
 private CrateSize crateSizeEnum;
@@ -29,7 +22,7 @@ private ArrayList<Content> contentList;
 
 	
 
-	public Crate(int crateID, int shelfNumber, int clientID, int wareHouseID,  Date createdOnDate, CrateStatus crateStatusEnum, CrateSize crateSizeEnum, CrateContentType crateContentTypeEnum, boolean isFull) 
+	public Crate(int crateID, int shelfNumber, int clientID, int wareHouseID,  LocalDate createdOnDate, CrateStatus crateStatusEnum, CrateSize crateSizeEnum, CrateContentType crateContentTypeEnum, boolean isFull) 
 	{
 		this.crateID = crateID;
 		this.shelfNumber = shelfNumber;
@@ -50,7 +43,14 @@ private ArrayList<Content> contentList;
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public int getWareHouseID() {
+		return wareHouseID;
+	}
 
+	public void setWareHouseID(int wareHouseID) {
+		this.wareHouseID = wareHouseID;
+	}
 	public int getCrateID() {
 		return crateID;
 	}
@@ -67,11 +67,11 @@ private ArrayList<Content> contentList;
 		this.shelfNumber = shelfNumber;
 	}
 	
-	public Date getCreatedOnDate() {
+	public LocalDate getCreatedOnDate() {
 		return createdOnDate;
 	}
 
-	public void setCreatedOnDate(Date createdOnDate) {
+	public void setCreatedOnDate(LocalDate createdOnDate) {
 		this.createdOnDate = createdOnDate;
 	}
 

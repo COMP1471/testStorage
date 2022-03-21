@@ -4,5 +4,6 @@ public enum CrateContentType
 {
 	paperContent,
 	electronicMediaContent,
-	miscellaneousContent
+	miscellaneousContent,
+	unknownContent
 }

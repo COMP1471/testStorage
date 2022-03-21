@@ -1,15 +1,21 @@
 package testStorage.Controller;
 
+import java.awt.EventQueue;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 import testStorage.Model.Accounting;
 import testStorage.Model.Branch;
 import testStorage.Model.Client;
 import testStorage.Model.Crate;
+import testStorage.Model.CrateContentType;
+import testStorage.Model.CrateFactory;
+import testStorage.Model.CrateSize;
+import testStorage.Model.CrateStatus;
 import testStorage.Model.Employee;
 import testStorage.Model.Management;
 import testStorage.Model.Manager;
@@ -17,6 +23,7 @@ import testStorage.Model.Office;
 import testStorage.Model.Sales;
 import testStorage.Model.Staff;
 import testStorage.Model.WareHouse;
+import testStorage.View.LoginFrame;
 
 public class ModelViewController 
 {
@@ -31,7 +38,6 @@ public class ModelViewController
 		
 		// 2) Load all Packford offices with their associated staff and create their instances 
 		ArrayList<Office> office = loadAllOffices(con);	
-		
 	  }
 	
 	private static ArrayList<Office> loadAllOffices(Connection con) 
@@ -76,6 +82,8 @@ public class ModelViewController
 		String sql = "select * from warehouse where OfficeID = " + officeID;
 		ArrayList<Crate> crateList = new ArrayList<Crate>();
 		
+		CrateFactory crateFactory = new CrateFactory();
+		
 		try 
 		{
 			PreparedStatement  prepareStatement = con.prepareStatement(sql);
@@ -85,7 +93,7 @@ public class ModelViewController
 			{
 				int crateID = Integer.valueOf(result.getString(3));
 				
-				Crate crate = retrieveCrateByID(crateID);
+				Crate crate = crateFactory.retrieveCrateByID(crateID, officeID, con);
 				crateList.add(crate);
 			}  
 		} 
@@ -96,12 +104,6 @@ public class ModelViewController
 		}
 		 
 		return crateList;
-	}
-
-	private static Crate retrieveCrateByID(int crateID) 
-	{
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	private static ArrayList<Staff> getStaffForOfficeID(int officeID, Connection con) 
