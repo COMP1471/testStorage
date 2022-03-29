@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="680.0" prefWidth="1010.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="testStorage.View.AdminController">
+   <children>
+      <Button layoutX="-3.0" layoutY="-3.0" mnemonicParsing="false" onAction="#handleBackAction" prefHeight="73.0" prefWidth="85.0">
+         <graphic>
+            <ImageView fitHeight="65.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/icons8-back_arrow.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TableView fx:id="warehouseTable" layoutX="23.0" layoutY="114.0" prefHeight="429.0" prefWidth="959.0" AnchorPane.bottomAnchor="137.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0">
+        <columns>
+          <TableColumn fx:id="iDColumn" prefWidth="149.9999828338623" text="ID" />
+          <TableColumn fx:id="addressColumn" minWidth="0.0" prefWidth="808.0" text="Address" />
+        </columns>
+      </TableView>
+      <TextField fx:id="warehouseAddress" layoutX="30.0" layoutY="587.0" prefHeight="42.0" prefWidth="672.0" promptText="Address" AnchorPane.bottomAnchor="67.0" AnchorPane.leftAnchor="30.0" />
+      <TextField fx:id="warehousePostcode" layoutX="31.0" layoutY="626.0" prefHeight="42.0" prefWidth="402.0" promptText="Postcode" AnchorPane.bottomAnchor="12.0" />
+      <Button layoutX="755.0" layoutY="595.0" mnemonicParsing="false" onAction="#handleAddWarehouse" prefHeight="56.0" prefWidth="151.0" text="Add Warehouse" AnchorPane.bottomAnchor="29.0" />
+   </children>
+</AnchorPane>

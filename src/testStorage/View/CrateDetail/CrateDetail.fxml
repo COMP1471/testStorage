@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefWidth="1010.0" style="-fx-background-color: #0d0d0b;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testStorage.View.CrateDetail.CrateDetailController">
+   <children>
+      <Button mnemonicParsing="false" onAction="#handleBackAction" prefHeight="59.0" prefWidth="90.0" style="-fx-background-color: #0d0d0b#0d0d0b #0d0d0b;">
+         <graphic>
+            <ImageView fitHeight="65.0" fitWidth="109.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-back_arrow.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <TableView fx:id="contentTable" prefHeight="430.0" prefWidth="636.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="230.0">
+        <columns>
+          <TableColumn fx:id="contentID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="contentName" prefWidth="559.8826370239258" text="name" />
+        </columns>
+      </TableView>
+      <VBox prefHeight="175.0" prefWidth="568.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="442.0" AnchorPane.topAnchor="60.0">
+         <children>
+            <Label fx:id="crateID" prefHeight="63.0" prefWidth="349.0" text="CrateID : " textFill="WHITE">
+               <font>
+                  <Font name="Poppins Bold" size="23.0" />
+               </font>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </Label>
+            <Label fx:id="contentType" prefHeight="28.0" prefWidth="323.0" text="Conten Type: " textFill="#b5b3b3">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="wareHouse" prefHeight="27.0" prefWidth="316.0" text="Warehouse : " textFill="#aeaeae">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </padding>
+            </Label>
+            <Label text="Crate Content" textFill="WHITE">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <font>
+                  <Font name="Poppins Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" layoutX="674.0" layoutY="127.0" prefHeight="475.0" prefWidth="322.0" spacing="20.0" style="-fx-background-color: #1B1A17; -fx-background-radius: 20;" AnchorPane.bottomAnchor="78.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="127.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="29.0" prefWidth="322.0">
+               <children>
+                  <Label prefHeight="23.0" prefWidth="119.0" text="Status  :" textFill="WHITE">
+                     <font>
+                        <Font name="Poppins Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="status" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="245.0" text="kk" textFill="WHITE">
+                     <font>
+                        <Font name="Poppins Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="36.0" right="38.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="22.0" prefWidth="322.0">
+               <children>
+                  <Label prefHeight="23.0" prefWidth="90.0" text="Size :  " textFill="WHITE">
+                     <font>
+                        <Font name="Poppins SemiBold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="size" alignment="CENTER_RIGHT" prefHeight="17.0" prefWidth="244.0" text="jjj" textFill="WHITE">
+                     <font>
+                        <Font name="Poppins SemiBold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+               <padding>
+                  <Insets left="38.0" right="38.0" />
+               </padding>
+            </HBox>
+            <VBox fx:id="requestedDetail" alignment="CENTER" prefHeight="98.0" prefWidth="322.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="23.0" prefWidth="181.0" text="Request  By Branch  " textFill="WHITE">
+                     <font>
+                        <Font name="Poppins Black" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="requestedBy" alignment="CENTER" ellipsisString="" prefHeight="54.0" prefWidth="250.0" text="hhgghhhhghhghhghgghhghhghghhghhghghghghghghghgh" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="Poppins Regular" size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <DatePicker fx:id="expectedDate" prefHeight="35.0" prefWidth="242.0" promptText="Expected Delivery" style="-fx-background-color: white;" />
+            <Button fx:id="requestCrate" mnemonicParsing="false" onAction="#handleRequestCrate" prefHeight="50.0" prefWidth="240.0" style="-fx-background-radius: 0; -fx-background-color: #F0A500;" text="Request Crate">
+               <font>
+                  <Font name="Poppins Bold" size="14.0" />
+               </font>
+            </Button>
+            <DatePicker fx:id="collectionDate" prefHeight="35.0" prefWidth="242.0" promptText="Collection Date" style="-fx-background-color: white;" />
+            <Button fx:id="collectCrate" mnemonicParsing="false" onAction="#handleCollectCrate" prefHeight="50.0" prefWidth="240.0" style="-fx-background-radius: 0; -fx-background-color: #F0A500;" text="Collected Crate">
+               <font>
+                  <Font name="Poppins Bold" size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

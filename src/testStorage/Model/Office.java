@@ -16,6 +16,13 @@ private ArrayList<Staff> staffList;
 		this.setOfficePostCode(officePostCode);
 		this.staffList = staffList;
 	}
+	
+	public Office(String officeAddress, String officePostCode)
+	{
+		this.officeAddress = officeAddress;
+		this.setOfficePostCode(officePostCode);
+		staffList = new ArrayList<Staff>();
+	}
 
 	public Office(int officeID, String officeAddress, String officePostCode)
 	{

@@ -1,6 +1,7 @@
 package testStorage.Model;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class WareHouse extends Office 
 {
@@ -20,6 +21,11 @@ private boolean [][] shelfs = new boolean[6][6];
 		// constructor for an existing warehouse
 		super(officeID, officeAddress, officePostCode, staffList);
 		this.crateList = crateList;
+	}
+
+	@Override
+	public String toString() {
+		return "WareHouse ID : "+ this.getOfficeID() + " Address : " + this.getOfficeAddress() ;
 	}
 
 	public ArrayList<Crate> getCrateList() 

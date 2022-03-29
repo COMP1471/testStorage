@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="433.0" prefWidth="515.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testStorage.View.Login.LoginViewController">
+   <children>
+      <ImageView fitHeight="682.0" fitWidth="1020.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../images/loginBg.jpg" />
+         </image>
+      </ImageView>
+      <Pane opacity="0.25" prefHeight="684.0" prefWidth="1018.0" style="-fx-background-color: #000000;" />
+      <Pane layoutX="293.0" layoutY="70.0" prefHeight="579.0" prefWidth="496.0" style="-fx-background-color: #1B1A17; -fx-background-radius: 20;">
+         <children>
+            <VBox alignment="CENTER" fillWidth="false" layoutX="54.0" layoutY="96.0" prefHeight="427.0" prefWidth="390.0" spacing="20.0">
+               <children>
+                  <Pane prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #FFFFFF; -fx-background-radius: 50;">
+                     <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="30.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-stacking.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <Label prefHeight="24.0" prefWidth="95.0" text="Login As" textFill="WHITE">
+                     <font>
+                        <Font name="Poppins Regular" size="22.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="50.0" prefWidth="320.0" style="-fx-border-color: #F0A500 #F0A500; -fx-border-radius: 35;">
+                     <children>
+                        <Button fx:id="staffButton" mnemonicParsing="false" onAction="#handleLoginAsStaff" prefHeight="50.0" prefWidth="160.0" style="-fx-background-color: #F0A500; -fx-background-radius: 35;" text="Staff">
+                           <font>
+                              <Font name="Poppins Bold" size="19.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="clientButton" mnemonicParsing="false" onAction="#handleLoginAsClient" prefHeight="50.0" prefWidth="160.0" style="-fx-background-radius: 35; -fx-background-color: #1C00ff00;" text="Client" textFill="WHITE">
+                           <font>
+                              <Font name="Poppins Bold" size="19.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <TextField fx:id="userName" alignment="CENTER" prefHeight="40.0" prefWidth="320.0" promptText="UserName" style="-fx-background-color:#292723; -fx-text-fill: #ffffff; -fx-border-color: #ffffff;">
+                     <font>
+                        <Font name="Poppins Regular" size="12.0" />
+                     </font>
+                  </TextField>
+                  <PasswordField fx:id="passWord" alignment="CENTER" prefHeight="40.0" prefWidth="320.0" promptText="Password" style="-fx-background-color: #292723#292723; -fx-border-color: #FFFFFF; -fx-text-fill: #FFFFFF;">
+                     <font>
+                        <Font name="Poppins Regular" size="13.0" />
+                     </font>
+                  </PasswordField>
+                  <Button fx:id="signUpButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleLoginButtonAction" prefHeight="40.0" prefWidth="320.0" style="-fx-background-color: #F0A500; -fx-background-radius: 0;" text="SignUp">
+                     <font>
+                        <Font name="Poppins Bold" size="18.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="errorMessage" opacity="0.0" text="Label" textFill="#ae3030">
+                     <font>
+                        <Font name="Poppins Regular" size="13.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

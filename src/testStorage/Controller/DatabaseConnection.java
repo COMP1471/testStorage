@@ -6,10 +6,10 @@ public class DatabaseConnection {
       private String userName = "root";
       private String passWord = "";
       private String hostName = "localhost";
-      private String databaseName = "test2";
+      private String databaseName = "test";
       private String portNumber = "3306";
       private Connection sqlConnection;
-      private final int maxRetry = 3;
+      private static final int maxRetry = 3;
       private static DatabaseConnection shared = null;
       
       private DatabaseConnection() {
