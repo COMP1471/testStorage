@@ -23,7 +23,7 @@
         <columns>
           <TableColumn fx:id="orderID" prefWidth="105.85990524291992" text="OrderID" />
           <TableColumn fx:id="orderType" prefWidth="138.2996063232422" text="Type" />
-            <TableColumn fx:id="orderCrateID" prefWidth="94.97409057617188" text="Cart" />
+            <TableColumn fx:id="orderCrateID" prefWidth="94.97409057617188" text="Crate" />
             <TableColumn fx:id="orderExpected" prefWidth="163.08392333984375" text="Expected On" />
             <TableColumn fx:id="orderCrateStatus" prefWidth="144.340087890625" text="Status" />
             <TableColumn fx:id="orderAddress" prefWidth="361.659912109375" text="Address" />

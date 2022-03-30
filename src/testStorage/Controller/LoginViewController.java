@@ -1,4 +1,4 @@
-package testStorage.View.Login;
+package testStorage.Controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -15,7 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import testStorage.DependencyContainer.LoginDependencyContainer;
+import testStorage.Factory.ControllerFactory;
 import testStorage.Model.Employee;
 import testStorage.Model.Staff;
 import testStorage.Model.User;
@@ -26,7 +26,7 @@ public class LoginViewController implements Initializable {
 	final private String activeStyle = "-fx-text-fill: #000000; -fx-background-radius: 35; -fx-background-color: #F0A500;";
 	final private String unactiveStyle = "-fx-text-fill: #FFFFFF; -fx-background-radius: 35; -fx-background-color: #1C00ff00;";
 
-	private LoginDependencyContainer loginContainer; 
+	private ControllerFactory loginContainer; 
 	
 	@FXML
 	private Button clientButton;
@@ -88,7 +88,7 @@ public class LoginViewController implements Initializable {
 	    NavigationManager.getInstance().pushNewScene(scene);
 	}
 	
-	public void setContainer(LoginDependencyContainer container) {
+	public void setContainer(ControllerFactory container) {
 		this.loginContainer = container;
 	}
 	

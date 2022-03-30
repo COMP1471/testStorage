@@ -25,6 +25,14 @@ private boolean paid;
 
 private int staffID;
 
+public Bill(int clientID, Date toDate, Date fromDate, double amountBilled, boolean paid) {
+	this.clientID = clientID;
+	this.toDate = toDate;
+	this.fromDate = fromDate;
+	this.amountBilled = amountBilled;
+	this.paid = paid;
+}
+
 public Bill(int billID, int clientID, Date toDate, Date fromDate, double amountBilled, boolean paid,int staffID) {
 	this.billID = billID;
 	this.clientID = clientID;

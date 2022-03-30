@@ -1,4 +1,4 @@
-package testStorage.View.CrateDetail;
+package testStorage.Controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -22,7 +22,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.VBox;
-import testStorage.DependencyContainer.ClientDashBoardDependencyContainer;
+import testStorage.Factory.ClientDashBoardFactory;
 import testStorage.Model.Branch;
 import testStorage.Model.Content;
 import testStorage.Model.Crate;
@@ -80,9 +80,9 @@ public class CrateDetailController implements Initializable  {
 	@FXML 
 	private TableColumn<Content, Integer> contentID;
 	
-	private ClientDashBoardDependencyContainer clientDashBoardContainer; 
+	private ClientDashBoardFactory clientDashBoardContainer; 
 	
-	public void setClientDashBoardContainer(ClientDashBoardDependencyContainer clientDashBoardContainer) {
+	public void setClientDashBoardContainer(ClientDashBoardFactory clientDashBoardContainer) {
 		this.clientDashBoardContainer = clientDashBoardContainer;
 	}
 

@@ -1,4 +1,4 @@
-package testStorage.View;
+package testStorage.Controller;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -24,6 +24,7 @@ import testStorage.Model.Office;
 import testStorage.Model.Staff;
 import testStorage.Model.User;
 import testStorage.Model.WareHouse;
+import testStorage.View.NavigationManager;
 
 public class AdminController implements Initializable {
 	

@@ -1,4 +1,4 @@
-package testStorage.DependencyContainer;
+package testStorage.Factory;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -6,13 +6,13 @@ import java.sql.Date;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import testStorage.Controller.ClientDashBoardViewController;
 import testStorage.Controller.ContentUpdateController;
+import testStorage.Controller.CrateDetailController;
 import testStorage.Model.Crate;
 import testStorage.Model.Employee;
-import testStorage.View.ClientDashboard.ClientDashBoardViewController;
-import testStorage.View.CrateDetail.CrateDetailController;
 
-public class ClientDashBoardDependencyContainer {
+public class ClientDashBoardFactory {
 	
 	private Employee employee;
 	
@@ -21,7 +21,7 @@ public class ClientDashBoardDependencyContainer {
 	}
 
 	public Scene loadView(Employee employee) throws IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/ClientDashboard/ClientDashboard.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/ClientDashboard.fxml"));
 		Parent parent = (Parent) loader.load();
 		ClientDashBoardViewController controller = loader.getController();
 		System.out.print(controller);
@@ -34,7 +34,7 @@ public class ClientDashBoardDependencyContainer {
 	}
 
 	public Scene showCrateContentUpdate(Crate crate,Date onDate) throws IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/CrateDetail/CrateContentUpdate.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/CrateContentUpdate.fxml"));
 		Parent parent = (Parent) loader.load();
 	    ContentUpdateController controller = loader.getController();
 		System.out.print(controller);
@@ -47,7 +47,7 @@ public class ClientDashBoardDependencyContainer {
 	
 	
 	public Scene showCrateDetail(Crate crate) throws IOException {
-		FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/CrateDetail/CrateDetail.fxml"));
+		FXMLLoader loader = new FXMLLoader(getClass().getResource("../View/CrateDetail.fxml"));
 		Parent parent = (Parent) loader.load();
 		CrateDetailController controller = loader.getController();
 		System.out.print(controller);

@@ -1,4 +1,4 @@
-package testStorage.View;
+package testStorage.Controller;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -32,6 +32,7 @@ import testStorage.Model.Order;
 import testStorage.Model.Sales;
 import testStorage.Model.User;
 import testStorage.Model.WareHouse;
+import testStorage.View.NavigationManager;
 
 public class SalesManagementController  implements Initializable {
 	
@@ -297,7 +298,7 @@ public class SalesManagementController  implements Initializable {
 		});
 		context.getItems().add(menu);
 		setupWarehouseComboBox();
-		employeeTable.setContextMenu(context);
+		crateTable.setContextMenu(context);
 		crateSizeSelection.setItems(FXCollections.observableArrayList( CrateSize.values()));
 		crateContentSelection.setItems(FXCollections.observableArrayList(CrateContentType.values()));
 	}

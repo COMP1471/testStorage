@@ -7,14 +7,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import testStorage.DependencyContainer.LoginDependencyContainer;
-import testStorage.View.Login.LoginViewController;
+import testStorage.Controller.LoginViewController;
+import testStorage.Factory.ControllerFactory;
 
 public class main extends Application {
 
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-		    LoginDependencyContainer loginContainer = new LoginDependencyContainer(); 
+		    ControllerFactory loginContainer = new ControllerFactory(); 
 		    Scene scene = loginContainer.loadView();
 		    NavigationManager.getInstance().setPrimaryStage(primaryStage);
 	        primaryStage.setTitle("PackFord Storage");

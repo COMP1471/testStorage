@@ -1,5 +1,5 @@
-package testStorage.View.ClientCrateListing;
-import testStorage.DependencyContainer.ClientDashBoardDependencyContainer;
+package testStorage.Controller;
+import testStorage.Factory.ClientDashBoardFactory;
 import testStorage.Model.Crate;
 import testStorage.View.NavigationManager;
 
@@ -33,13 +33,13 @@ public class CrateListViewCell extends ListCell<Crate> {
 	
 	private FXMLLoader mLLoader;
 	
-	private ClientDashBoardDependencyContainer clientDashBoardContainer; 
+	private ClientDashBoardFactory clientDashBoardContainer; 
 	
 	private String stillStyle = "-fx-text-fill: #FFFFFF; -fx-background-radius: 35; -fx-background-color: #1C00ff00;";
 	private String intransitStyle = "-fx-text-fill: #000000; -fx-background-radius: 35; -fx-background-color: #F0A500;"; 
 	
 	
-	 public CrateListViewCell(ClientDashBoardDependencyContainer clientDashBoardContainer){
+	 public CrateListViewCell(ClientDashBoardFactory clientDashBoardContainer){
 	      this.clientDashBoardContainer = clientDashBoardContainer;
 	 }
 	

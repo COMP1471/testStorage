@@ -1,4 +1,4 @@
-package testStorage.View.ClientDashboard;
+package testStorage.Controller;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -20,7 +20,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.util.Callback;
-import testStorage.DependencyContainer.ClientDashBoardDependencyContainer;
+import testStorage.Factory.ClientDashBoardFactory;
 import testStorage.Model.Bill;
 import testStorage.Model.Client;
 import testStorage.Model.Crate;
@@ -29,7 +29,6 @@ import testStorage.Model.Order;
 import testStorage.Model.OrderType;
 import testStorage.Model.Staff;
 import testStorage.View.NavigationManager;
-import testStorage.View.ClientCrateListing.CrateListViewCell;
 
 public class ClientDashBoardViewController implements Initializable {
    
@@ -136,9 +135,9 @@ public class ClientDashBoardViewController implements Initializable {
 	@FXML
 	private AnchorPane cratePane;
 	
-	private ClientDashBoardDependencyContainer clientDashBoardContainer; 
+	private ClientDashBoardFactory clientDashBoardContainer; 
 	
-	public void setClientDashBoardContainer(ClientDashBoardDependencyContainer clientDashBoardContainer) {
+	public void setClientDashBoardContainer(ClientDashBoardFactory clientDashBoardContainer) {
 		this.clientDashBoardContainer = clientDashBoardContainer;
 	}
 

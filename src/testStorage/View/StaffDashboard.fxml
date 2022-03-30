@@ -27,7 +27,7 @@
                      <graphic>
                         <ImageView fitHeight="30.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../images/icons8-logout_rounded_left.png" />
+                              <Image url="@images/icons8-logout_rounded_left.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -116,7 +116,7 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                                  <children>
-                                    <Button mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #0d0d0b; -fx-border-color: #292723; -fx-background-radius: 5; -fx-border-radius: 5;">
+                                    <Button mnemonicParsing="false" onAction="#handleAddClient" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #0d0d0b; -fx-border-color: #292723; -fx-background-radius: 5; -fx-border-radius: 5;">
                                        <graphic>
                                           <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                                              <children>
@@ -134,7 +134,7 @@
                                           </VBox>
                                        </graphic>
                                     </Button>
-                                    <Button mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #0d0d0b; -fx-border-color: #292723; -fx-background-radius: 5; -fx-border-radius: 5;" GridPane.columnIndex="1">
+                                    <Button mnemonicParsing="false" onAction="#handleAddBranch" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #0d0d0b; -fx-border-color: #292723; -fx-background-radius: 5; -fx-border-radius: 5;" GridPane.columnIndex="1">
                                        <graphic>
                                           <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                                              <children>
@@ -152,7 +152,7 @@
                                           </VBox>
                                        </graphic>
                                     </Button>
-                                    <Button mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #0d0d0b; -fx-border-color: #292723; -fx-background-radius: 5; -fx-border-radius: 5;" GridPane.columnIndex="2">
+                                    <Button mnemonicParsing="false" onAction="#handleAddEmployee" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #0d0d0b; -fx-border-color: #292723; -fx-background-radius: 5; -fx-border-radius: 5;" GridPane.columnIndex="2">
                                        <graphic>
                                           <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                                              <children>
@@ -161,7 +161,25 @@
                                                       <Image url="@../images/icons8-reception.png" />
                                                    </image>
                                                 </ImageView>
-                                                <Label text="Manage Staff" textFill="#f5f4f4">
+                                                <Label text="Manage Employee" textFill="#f5f4f4">
+                                                   <font>
+                                                      <Font name="Poppins Bold" size="19.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </graphic>
+                                    </Button>
+                                    <Button mnemonicParsing="false" onAction="#handleAddCrate" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #0d0d0b; -fx-border-color: #292723; -fx-background-radius: 5; -fx-border-radius: 5;" GridPane.rowIndex="1">
+                                       <graphic>
+                                          <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-reception.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label text="Add New Crate" textFill="#f5f4f4">
                                                    <font>
                                                       <Font name="Poppins Bold" size="19.0" />
                                                    </font>
@@ -189,7 +207,7 @@
                                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                  </rowConstraints>
                                  <children>
-                                    <Button mnemonicParsing="false" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #0d0d0b; -fx-border-color: #292723; -fx-background-radius: 5; -fx-border-radius: 5;">
+                                    <Button mnemonicParsing="false" onAction="#handleGrenratedBill" prefHeight="200.0" prefWidth="300.0" style="-fx-background-color: #0d0d0b; -fx-border-color: #292723; -fx-background-radius: 5; -fx-border-radius: 5;">
                                        <graphic>
                                           <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                                              <children>

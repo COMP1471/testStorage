@@ -1,4 +1,4 @@
-package testStorage.View.StaffDashboard;
+package testStorage.Controller;
 
 import java.io.IOException;
 import java.net.URL;
@@ -10,7 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
-import testStorage.DependencyContainer.StaffDashBoardDependencyContainer;
+import testStorage.Factory.StaffDashBoardFactory;
 import testStorage.Model.Accounting;
 import testStorage.Model.Admin;
 import testStorage.Model.Management;
@@ -37,7 +37,7 @@ public class StaffDashBaordViewController implements Initializable {
      
      private Staff staff;
      
-     private StaffDashBoardDependencyContainer staffContainer;
+     private StaffDashBoardFactory staffContainer;
 
 	@Override
 	 public void initialize(URL arg0, ResourceBundle arg1) {
@@ -108,16 +108,41 @@ public class StaffDashBaordViewController implements Initializable {
 	 }
 	
 	 @FXML 
-	 private void handleAddClient(ActionEvent event) {	 
-		 
+	 private void handleAddClient(ActionEvent event) throws IOException {	 
+		 Sales sales = (Sales) staff;  
+		 Scene scene =  staffContainer.showClientManagement(sales);
+		 NavigationManager.getInstance().pushNewScene(scene);
 	 }
 	 
 	 @FXML 
-	  private void handleManagerBranch(ActionEvent event) {
-		 
+	  private void handleAddBranch(ActionEvent event) throws IOException {
+		 Sales sales = (Sales) staff;  
+		 Scene scene =  staffContainer.showBranchManagement(sales);
+		 NavigationManager.getInstance().pushNewScene(scene);
+	 }
+	 
+	 @FXML 
+	  private void handleAddEmployee(ActionEvent event) throws IOException {
+				 Sales sales = (Sales) staff;  
+				 Scene scene =  staffContainer.showEmployeeManagement(sales);
+				 NavigationManager.getInstance().pushNewScene(scene);
+	 }
+	 
+	 @FXML 
+	  private void handleAddCrate(ActionEvent event) throws IOException {
+		 Sales sales = (Sales) staff;  
+		 Scene scene =  staffContainer.showCrateManagement(sales);
+		 NavigationManager.getInstance().pushNewScene(scene);
+	 }
+	 
+	 @FXML 
+	  private void handleGrenratedBill(ActionEvent event) throws IOException {
+		 Accounting account = (Accounting) staff;  
+		 Scene scene =  staffContainer.showBillingGenration(account);
+		 NavigationManager.getInstance().pushNewScene(scene);
 	 }
 
-	  public void setStaffContainer(StaffDashBoardDependencyContainer staffContainer) {
+	  public void setStaffContainer(StaffDashBoardFactory staffContainer) {
 			this.staffContainer = staffContainer;
 	 }
 	 

@@ -1,22 +1,22 @@
-package testStorage.DependencyContainer;
+package testStorage.Factory;
 
 import java.io.IOException;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import testStorage.Controller.LoginViewController;
 import testStorage.Model.Employee;
 import testStorage.Model.Staff;
-import testStorage.View.Login.LoginViewController;
 
-public class LoginDependencyContainer {
+public class ControllerFactory {
 	
-	private ClientDashBoardDependencyContainer clientContainer;
-	private StaffDashBoardDependencyContainer staffContainer;
+	private ClientDashBoardFactory clientContainer;
+	private StaffDashBoardFactory staffContainer;
 	
-	public LoginDependencyContainer() {
-		clientContainer = new ClientDashBoardDependencyContainer();
-		staffContainer = new StaffDashBoardDependencyContainer();
+	public ControllerFactory() {
+		clientContainer = new ClientDashBoardFactory();
+		staffContainer = new StaffDashBoardFactory();
 		
 	}
 	

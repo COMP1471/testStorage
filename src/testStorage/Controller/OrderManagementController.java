@@ -1,4 +1,4 @@
-package testStorage.View;
+package testStorage.Controller;
 
 import java.net.URL;
 import java.sql.Date;
@@ -26,6 +26,7 @@ import testStorage.Model.CrateStatus;
 import testStorage.Model.Management;
 import testStorage.Model.Order;
 import testStorage.Model.OrderType;
+import testStorage.View.NavigationManager;
 
 public class OrderManagementController implements Initializable {
 	
@@ -79,10 +80,6 @@ public class OrderManagementController implements Initializable {
 	
 	
 	public void populateOrderInProgress() {
-		ObservableList<Order> orders = FXCollections.observableArrayList(); 
-		ArrayList<Order> orderlist = orderManager.getOrdersManageBy();
-		orders.addAll(orderlist);
-		orderTable.setItems(orders);
 		orderCrateStatus.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Order, String>, ObservableValue<String>>() {
 
 			@Override
@@ -97,26 +94,39 @@ public class OrderManagementController implements Initializable {
 		menu.setOnAction((ActionEvent event) -> {
 			Order order = orderTable.getSelectionModel().getSelectedItem();
 			orderManager.setOrderCompleted(order);
-			populateOrderInProgress();
+			orderInProgressTable();
 		});
 		context.getItems().add(menu);
-		orderTable.setContextMenu(null);
+		orderTable.setContextMenu(context);
 		orderStatus.setItems(FXCollections.observableArrayList(CrateStatus.values()));
+		orderInProgressTable();
+	}
+
+	private void orderInProgressTable() {
+		ObservableList<Order> orders = FXCollections.observableArrayList(); 
+		ArrayList<Order> orderlist = orderManager.getOrdersManageBy();
+		orders.addAll(orderlist);
+		orderTable.setItems(orders);
 	}
 	
 	
 	public void populatePendingOrder() {
-		ObservableList<Order> orders = FXCollections.observableArrayList(); 
-		ArrayList<Order> orderlist = orderManager.getPendingOrders();
-		orders.addAll(orderlist);
 		ContextMenu context = new ContextMenu();
 		MenuItem menu = new MenuItem("Reject");
 		menu.setOnAction((ActionEvent event) -> {
 			Order order = orderTable.getSelectionModel().getSelectedItem();
 			orderManager.rejectOrder(order);
-			populatePendingOrder();
+			orderPendingTable();
 		});
+		context.getItems().add(menu);
 		orderTable.setContextMenu(context);
+		orderPendingTable();
+	}
+
+	private void orderPendingTable() {
+		ObservableList<Order> orders = FXCollections.observableArrayList(); 
+		ArrayList<Order> orderlist = orderManager.getPendingOrders();
+		orders.addAll(orderlist);
 		orderTable.setItems(orders);
 	}
 	
@@ -126,7 +136,7 @@ public class OrderManagementController implements Initializable {
 		CrateStatus status = orderStatus.getValue();
           if(order != null) {
         	  orderManager.setOrderStatusTo(status, order);
-        	  populateOrderInProgress();
+        	  orderInProgressTable();
           } 
 	}
 	
@@ -136,7 +146,7 @@ public class OrderManagementController implements Initializable {
 		System.out.print(order.getOrderID());
 		if(order != null) {
 			orderManager.setManageOrderFor(order);
-			populatePendingOrder();
+			orderPendingTable();
 		}
 	}
 	

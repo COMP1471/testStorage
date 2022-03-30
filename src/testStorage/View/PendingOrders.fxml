@@ -7,8 +7,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="680.0" prefWidth="1010.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/17" fx:controller="testStorage.View.OrderManagementController">
+<AnchorPane prefHeight="680.0" prefWidth="1010.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="testStorage.View.OrderManagementController">
    <children>
       <Button layoutY="-12.0" mnemonicParsing="false" onAction="#handleBackAction" prefHeight="78.0" prefWidth="89.0">
          <graphic>
@@ -23,7 +22,7 @@
         <columns>
           <TableColumn fx:id="orderID" prefWidth="105.85990524291992" text="OrderID" />
           <TableColumn fx:id="orderType" prefWidth="138.2996063232422" text="Type" />
-            <TableColumn fx:id="orderCrateID" prefWidth="94.97409057617188" text="Cart" />
+            <TableColumn fx:id="orderCrateID" prefWidth="94.97409057617188" text="Crate" />
             <TableColumn fx:id="orderExpected" prefWidth="163.08392333984375" text="Expected On" />
             <TableColumn fx:id="orderAddress" prefWidth="466.91607666015625" text="Address" />
         </columns>
